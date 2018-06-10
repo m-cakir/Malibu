@@ -43,7 +43,7 @@ class SpeechRecognitionIdleStateAnimator(private val floatingAmplitude: Int, pri
     private fun updateCirclePosition(bar: SpeechRecognitionBar, delta: Long, num: Int) {
         val angle = delta.toFloat() / IDLE_DURATION * 360f + 120f * num
         val y = (Math.sin(Math.toRadians(angle.toDouble())) * floatingAmplitude).toInt() + bar.startY
-        bar.y = y
+        bar.copy(y = y)
         bar.update()
     }
 }

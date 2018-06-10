@@ -2,14 +2,14 @@ package co.icanteach.malibu
 
 import android.graphics.RectF;
 
-data class SpeechRecognitionBar(var x: Int,
-                                var y: Int,
-                                var height: Int,
+data class SpeechRecognitionBar(val x: Int,
+                                val y: Int,
+                                val height: Int,
                                 val maxHeight: Int,
                                 val radius: Int,
                                 val startX: Int = x,
                                 val startY: Int = y,
-                                var rect: RectF = RectF(
+                                val rect: RectF = RectF(
                                         (x - radius).toFloat(),
                                         (y - height / 2).toFloat(),
                                         (x + radius).toFloat(),
@@ -18,10 +18,12 @@ data class SpeechRecognitionBar(var x: Int,
 
 
     fun update() {
-        rect = RectF(
+
+        copy(rect = RectF(
                 (x - radius).toFloat(),
                 (y - height / 2).toFloat(),
                 (x + radius).toFloat(),
-                (y + height / 2).toFloat())
+                (y + height / 2).toFloat()))
+
     }
 }

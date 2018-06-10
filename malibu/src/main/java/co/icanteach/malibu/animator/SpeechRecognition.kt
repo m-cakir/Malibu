@@ -90,8 +90,7 @@ class SpeechRecognition(bars: List<SpeechRecognitionBar>,
 
         val y = centerY + ((startPosition.x - centerX) * Math.sin(angle) + (startPosition.y - centerY) * Math.cos(angle)).toInt()
 
-        bar.x = x
-        bar.y = y
+        bar.copy(x, y)
         bar.update()
     }
 }

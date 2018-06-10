@@ -94,7 +94,7 @@ class SpeechRecognitionRmsStateAnimator(private val bar: SpeechRecognitionBar) :
             finished = true
         }
 
-        bar.height = height
+        bar.copy(height = height)
         bar.update()
 
         if (finished) {
@@ -121,12 +121,12 @@ class SpeechRecognitionRmsStateAnimator(private val bar: SpeechRecognitionBar) :
             return
         }
 
-        bar.height = height
+        bar.copy(height = height)
         bar.update()
     }
 
     private fun finish() {
-        bar.height = bar.radius * 2
+        bar.copy(height = bar.radius * 2)
         bar.update()
         isPlaying = false
     }

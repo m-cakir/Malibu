@@ -47,8 +47,7 @@ class SpeechRecognitionTransformAnimator(val bars: List<SpeechRecognitionBar>,
             val x = bar.startX + ((finalPositions.get(i).x - bar.startY) * (delta.toFloat() / DURATION)).toInt()
             val y = bar.startY + ((finalPositions.get(i).y - bar.startY) * (delta.toFloat() / DURATION)).toInt()
 
-            bar.x = x
-            bar.y = y
+            bar.copy(x, y)
             bar.update()
         }
 

@@ -332,9 +332,7 @@ class Malibu : View, RecognitionListener {
     private fun resetBars() {
         for (bar in recognitionBars) {
             bar.run {
-                x = startX
-                y = startY
-                height = radius * 2
+                copy(x = startX, y = startY, height = radius * 2)
                 update()
             }
         }
